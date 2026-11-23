@@ -1,5 +1,5 @@
 {
-  "name": "stock-masterclass-academy",
+  "name": "academy-web",
   "version": "1.0.0",
   "private": true,
   "engines": { "node": ">=20" },
