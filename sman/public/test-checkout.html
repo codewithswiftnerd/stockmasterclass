@@ -1,0 +1,16 @@
+<!doctype html><html lang="en-NG"><head><title>Test checkout | Stock Masterclass Academy</title><meta name="robots" content="noindex">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#0A1B3D">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&amp;family=Schibsted+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css"></head><body>
+<header class="nav"><div class="wrap nav-in"><a class="brand" href="/"><svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="6" fill="#E8B84A"/><path d="M8 22V17M14 22V12M20 22V15M26 22V8" stroke="#0A1B3D" stroke-width="3" stroke-linecap="round"/></svg><span>Stock Masterclass <b>Academy</b></span></a><a class="btn btn-gold btn-sm" href="/">Back to site</a></div></header>
+<main><section class="section result"><div class="wrap narrow center" id="out" aria-live="polite"><p class="test-flag">TEST MODE &mdash; no real payment is taken and nothing is sent to Paystack.</p><h1>Simulated checkout</h1><p>Reference: <strong id="ref"></strong></p><p class="muted">Simulated payments are stored as <em>test_paid</em> so they can never be confused with real ones.</p><div class="cta-row center"><button class="btn btn-gold" data-outcome="success">Simulate successful payment</button><button class="btn btn-navy" data-outcome="failed">Simulate failed payment</button></div><p class="form-status" id="st" role="status"></p></div></section></main>
+<footer class="footer"><div class="wrap foot-base"><p>&copy; <span data-year>2026</span> Stock Masterclass Academy.</p><p><strong>Educational purposes only. No guaranteed investment returns.</strong></p></div></footer>
+<script>
+const ref=new URLSearchParams(location.search).get("reference")||"";document.getElementById("ref").textContent=ref;
+document.querySelectorAll("[data-outcome]").forEach(b=>b.addEventListener("click",async()=>{
+  const st=document.getElementById("st");st.textContent="Please wait…";
+  const r=await fetch("/api/test-pay",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({reference:ref,outcome:b.dataset.outcome})});
+  if(r.ok)location.href="/payment-result.html?reference="+encodeURIComponent(ref);else{st.className="form-status error";st.textContent="Test mode is not available.";}
+}));
+</script></body></html>

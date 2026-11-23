@@ -1,0 +1,61 @@
+<!doctype html><html lang="en"><head><title>Administrator | Stock Masterclass Academy</title><meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#0A1B3D">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&amp;family=Schibsted+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css"></head>
+<body class="admin">
+<section class="login" id="login-view"><form id="login-form" class="form card" novalidate>
+  <h1>Administrator sign in</h1>
+  <label>Email<input name="email" type="email" autocomplete="username" required></label>
+  <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
+  <button class="btn btn-gold" type="submit">Sign in</button><p class="form-status" role="status" aria-live="polite"></p>
+</form></section>
+
+<div class="wrap dash" id="dash-view" hidden>
+  <header class="dash-head"><h1>Registrations</h1><div style="display:flex;gap:.8rem;align-items:center"><span class="muted" id="who"></span><button class="btn btn-navy btn-sm" id="signout">Sign out</button></div></header>
+  <div class="stats" id="stats"></div>
+  <div class="toolbar">
+    <input id="q" type="search" placeholder="Search name, email, phone or reference" aria-label="Search registrations">
+    <select id="status" aria-label="Filter by payment status"><option value="all">All</option><option value="paid">Paid</option><option value="unpaid">Unpaid</option></select>
+    <button id="export" class="btn btn-gold btn-sm">Export CSV</button>
+  </div>
+  <div class="table-wrap"><table><thead><tr><th>Name</th><th>Email</th><th>Phone</th><th>Status</th><th>Reference</th><th>Registered</th></tr></thead><tbody id="rows"><tr><td colspan="6">Loading…</td></tr></tbody></table></div>
+
+  <h2>Consultation bookings</h2>
+  <div class="toolbar">
+    <input id="cq" type="search" placeholder="Search name, email, phone or reference" aria-label="Search consultation bookings">
+    <select id="cstatus" aria-label="Filter by payment status"><option value="paid">Paid</option><option value="all">All</option><option value="unpaid">Unpaid</option></select>
+    <button id="cexport" class="btn btn-gold btn-sm">Export CSV</button>
+  </div>
+  <div class="table-wrap"><table><thead><tr><th>Name</th><th>Contact</th><th>Package</th><th>Payment</th><th>Stage</th><th>Booked</th><th></th></tr></thead><tbody id="crows"><tr><td colspan="7">Loading…</td></tr></tbody></table></div>
+
+  <h2>Masterclass settings</h2>
+  <form id="settings-form" class="form card" novalidate>
+    <label>Masterclass title<input name="masterclass_title"><span class="err" data-error="masterclass_title"></span></label>
+    <label>Registration price (NGN)<input name="registration_price_ngn" type="number" min="0" step="1"><span class="err" data-error="registration_price_ngn"></span></label>
+    <label>Masterclass date (shown to students)<input name="masterclass_date"></label>
+    <label class="check"><input type="checkbox" name="registration_open"> Registration is open</label>
+    <label>Contact email<input name="contact_email" type="email"><span class="err" data-error="contact_email"></span></label>
+    <label>Access details (how students join)<textarea name="access_details" rows="3"></textarea></label>
+    <fieldset class="settings-group"><legend>One-on-one portfolio consultation</legend>
+      <label class="check"><input type="checkbox" name="consultation_open"> Consultation booking is open</label>
+      <p class="muted" style="margin:0">Add up to three packages. Booking stays closed until at least one package has a name and price.</p>
+      <label>Package 1 name<input name="pkg1_name"><span class="err" data-error="pkg1_name"></span></label>
+      <label>Package 1 price (NGN)<input name="pkg1_price" type="number" min="0" step="1"><span class="err" data-error="pkg1_price"></span></label>
+      <label>Package 1 description<input name="pkg1_desc" maxlength="300"></label>
+      <label>Package 2 name<input name="pkg2_name"><span class="err" data-error="pkg2_name"></span></label>
+      <label>Package 2 price (NGN)<input name="pkg2_price" type="number" min="0" step="1"><span class="err" data-error="pkg2_price"></span></label>
+      <label>Package 2 description<input name="pkg2_desc" maxlength="300"></label>
+      <label>Package 3 name<input name="pkg3_name"><span class="err" data-error="pkg3_name"></span></label>
+      <label>Package 3 price (NGN)<input name="pkg3_price" type="number" min="0" step="1"><span class="err" data-error="pkg3_price"></span></label>
+      <label>Package 3 description<input name="pkg3_desc" maxlength="300"></label>
+    </fieldset>
+    <label>Instagram URL<input name="social_instagram"><span class="err" data-error="social_instagram"></span></label>
+    <label>X URL<input name="social_x"><span class="err" data-error="social_x"></span></label>
+    <label>YouTube URL<input name="social_youtube"><span class="err" data-error="social_youtube"></span></label>
+    <label>Facebook URL<input name="social_facebook"><span class="err" data-error="social_facebook"></span></label>
+    <button class="btn btn-gold" type="submit">Save settings</button><p class="form-status" role="status" aria-live="polite"></p>
+  </form>
+</div>
+<script type="module" src="/manage/admin.js"></script>
+</body></html>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 400" role="img" aria-label="Learning path">
+<rect width="520" height="400" rx="20" fill="#12275a"/>
+<path d="M60 320C140 320 150 220 240 220S350 120 450 80" fill="none" stroke="#E8B84A" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 14"/>
+<g><circle cx="60" cy="320" r="26" fill="#0A1B3D" stroke="#E8B84A" stroke-width="3"/><path d="M48 322l8 8 14-16" fill="none" stroke="#1FB26B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="240" cy="220" r="26" fill="#0A1B3D" stroke="#E8B84A" stroke-width="3"/><path d="M228 226V214M240 226V206M252 226V216" stroke="#E8B84A" stroke-width="4" stroke-linecap="round"/>
+<circle cx="450" cy="80" r="30" fill="#E8B84A"/><path d="M436 90l10-10 8 8 12-14" fill="none" stroke="#0A1B3D" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>
+<g fill="#ffffff" font-family="system-ui,sans-serif" font-size="16" font-weight="600"><text x="30" y="372">Market basics</text><text x="190" y="272">Analysis and risk</text><text x="352" y="138">Informed decisions</text></g>
+</svg>
